@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Osmio AI</title>
+    <meta name="description" content="Osmio AI is a Finnish AI company developing practical machine learning and computer vision solutions. Contact us at hello@osmioai.com.">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Page-specific styles */
+        .page-hero {
+            padding: calc(var(--section-gap) + 4rem) 0 3rem;
+        }
+
+        .page-hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 0.3rem 0.7rem;
+            background: var(--bg-card);
+            margin-bottom: 1.25rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            line-height: 1.75;
+        }
+
+        /* Company info card */
+        .company-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent);
+        }
+
+        .company-card h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.75rem;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .info-table td {
+            padding: 0.9rem 0;
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+
+        .info-table td:first-child {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            width: 180px;
+            padding-right: 1.5rem;
+        }
+
+        .info-table td:last-child {
+            color: var(--text-primary);
+        }
+
+        .info-table a {
+            color: var(--indigo);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .info-table a:hover {
+            opacity: 0.75;
+        }
+
+        /* Content section */
+        .content-section {
+            padding-top: 3.5rem;
+            padding-bottom: 5rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .content-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            transition: border-color 0.2s;
+        }
+
+        .content-block:hover {
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .content-block h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+        }
+
+        .content-block p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .contact-cta-text h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-cta-text p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 640px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="2" width="9" height="9" rx="2" fill="rgba(99,102,241,0.9)"/>
+                        <rect x="13" y="2" width="9" height="9" rx="2" fill="rgba(99,102,241,0.5)"/>
+                        <rect x="2" y="13" width="9" height="9" rx="2" fill="rgba(99,102,241,0.5)"/>
+                        <rect x="13" y="13" width="9" height="9" rx="2" fill="rgba(99,102,241,0.25)"/>
+                    </svg>
+                    Osmio AI
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#capabilities">Capabilities</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="about.html" style="color: var(--text-primary);">About</a>
+                    <a href="https://personalaicoach.ai" target="_blank" rel="noopener" class="nav-cta">Personal AI Coach ↗</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#capabilities">Capabilities</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a href="https://personalaicoach.ai" target="_blank" rel="noopener">Personal AI Coach ↗</a>
+    </div>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="container">
+            <div class="page-hero-eyebrow">Company</div>
+            <h1>About <span class="gradient-text">Osmio AI</span></h1>
+            <p>
+                We are a Finnish AI company building practical machine learning and computer vision
+                systems for real-world applications.
+            </p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-section">
+        <div class="container">
+
+            <!-- Company Info Card -->
+            <div class="company-card fade-up">
+                <h2>Company Information</h2>
+                <table class="info-table">
+                    <tr>
+                        <td>Company name</td>
+                        <td>Osmio AI</td>
+                    </tr>
+                    <tr>
+                        <td>Business ID (Y-tunnus)</td>
+                        <td>3610014-2</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>Finland</td>
+                    </tr>
+                    <tr>
+                        <td>Industry</td>
+                        <td>Artificial Intelligence &amp; Machine Learning</td>
+                    </tr>
+                    <tr>
+                        <td>Website</td>
+                        <td><a href="https://osmioai.com">osmioai.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="#" class="email-link" data-u="hello" data-d="osmioai.com">hello@osmioai.com</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- What we do -->
+            <div style="margin-top: 3rem; margin-bottom: 1.25rem;">
+                <span class="section-label">What we do</span>
+                <h2 class="section-title">Practical AI for real-world problems</h2>
+                <p class="section-subtitle" style="margin-bottom: 0;">
+                    Osmio AI develops AI solutions that combine machine learning, computer vision,
+                    and data engineering. We focus on systems that are technically rigorous and
+                    deliver measurable value.
+                </p>
+            </div>
+
+            <div class="content-grid fade-up">
+                <div class="content-block">
+                    <h3>Machine Learning</h3>
+                    <p>Training and deploying predictive models using XGBoost, neural networks, and custom pipelines for classification and regression tasks.</p>
+                </div>
+                <div class="content-block">
+                    <h3>Computer Vision</h3>
+                    <p>Object detection, image classification, and segmentation pipelines using YOLO and DenseNet architectures with production-ready inference.</p>
+                </div>
+                <div class="content-block">
+                    <h3>AI System Design</h3>
+                    <p>End-to-end architecture for AI-powered products — from data ingestion and feature engineering to deployed inference APIs and monitoring.</p>
+                </div>
+                <div class="content-block">
+                    <h3>Data Engineering</h3>
+                    <p>Robust ETL pipelines, analytics infrastructure, and data transformation systems that turn raw data into analysis-ready datasets.</p>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="contact-cta fade-up">
+                <div class="contact-cta-text">
+                    <h3>Get in touch</h3>
+                    <p>Interested in working together or have a question about our work?</p>
+                </div>
+                <a href="#" class="email-link" data-u="hello" data-d="osmioai.com" class="btn-primary">
+                    hello&#64;osmioai&#46;com
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="2" width="9" height="9" rx="2" fill="rgba(99,102,241,0.9)"/>
+                        <rect x="13" y="2" width="9" height="9" rx="2" fill="rgba(99,102,241,0.5)"/>
+                        <rect x="2" y="13" width="9" height="9" rx="2" fill="rgba(99,102,241,0.5)"/>
+                        <rect x="13" y="13" width="9" height="9" rx="2" fill="rgba(99,102,241,0.25)"/>
+                    </svg>
+                    Osmio AI
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About &amp; Contact</a>
+                        <a href="gdpr.html">GDPR &amp; Privacy</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Products</h4>
+                        <a href="https://personalaicoach.ai" target="_blank" rel="noopener">Personal AI Coach ↗</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <a href="#" class="email-link" data-u="hello" data-d="osmioai.com">hello@osmioai.com</a>
+                        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Osmio AI. Business ID: 3610014-2. All rights reserved.</span>
+                <div class="tech-stack">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">XGBoost</span>
+                    <span class="tech-pill">YOLO</span>
+                    <span class="tech-pill">FastAPI</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.email-link').forEach(el => {
+            const addr = el.dataset.u + '@' + el.dataset.d;
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                window.location.href = 'mailto:' + addr;
+            });
+            el.setAttribute('title', addr);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
